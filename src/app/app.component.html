@@ -1,0 +1,38 @@
+<nav class="navbar navbar-dark bg-primary">
+ <a class="navbar-brand" href="/">Angular Simple Crud</a>
+ 
+ <a class="navbar-brand" href="https://uigradients.com/" target="_blank">Enlace del Gradiente</a>
+</nav>
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-6 mt-3  ">
+      <ul class="list-group">
+        <li *ngFor="let empleado of empleados" class="list-group-item list-group-item-action"
+        (click)="selectEmpleado(empleado)" [class.active]="empleado==selectedEmp">
+          <span class="badge badge-primary"> {{empleado.id}}</span>
+          {{empleado.name}} -
+          {{empleado.country}}
+        </li>
+      </ul>
+<div class="card mt-4">
+  <div class="card-body">
+    <div clas="card-title">Inserta nuevo Empleado</div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.name" placeholder="Insertar nombre" id="" class="form-control">
+      
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="selectedEmp.country" placeholder="Insertar País" id="" class="form-control">
+      
+    </div>
+    <button class="btn btn-primary mr-1" (click)="agregar()" > {{labelbtn}}</button>
+    <button *ngIf="isSelected==true" class="btn btn-danger " (click)="delete()"  > Borrar</button>
+    
+  </div>
+</div>
+    </div>
+    <div class="col ml-4 mt-3"><img class="image" src="https://vignette.wikia.nocookie.net/zelda/images/2/26/Link_Artwork_LAR.png/revision/latest?cb=20191015020845&path-prefix=es"></div>
+    
+  </div>
+</div>
